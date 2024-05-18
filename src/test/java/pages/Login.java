@@ -17,15 +17,11 @@ public class Login {
     }
 
     public void login_operation(String name, String pass) throws InterruptedException {
-
-        username = (By) driver.findElement(username);
-        password = driver.findElement(By.name("password"));
-        loginBtn = driver.findElement(By.id("login-button"));
-        username.clear();
-        username.sendKeys(name);
-        password.clear();
-        password.sendKeys(pass);
-        loginBtn.click();
+        driver.findElement(username).clear();
+        driver.findElement(username).sendKeys(name);
+        driver.findElement(password).clear();
+        driver.findElement(password).sendKeys(pass);
+        driver.findElement(loginBtn).click();
         Thread.sleep(5000);
     }
 
